@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+* {
+	outline: none;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+			box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+}@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap");
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #fff;
+  color: #272727;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header {
+  background-color: #fff;
+  position: relative;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 75px;
+}
+
+.header-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  width: 80px;
+  padding-top: 2px;
+  padding-right: 5px;
+}
+
+.header-burger {
+  cursor: pointer;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+@media (min-width: 768px) {
+  .header-burger {
+    display: none;
+  }
+}
+
+.header-burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid #E1E1E1;
+    background-color: #ffffff;
+  }
+}
+
+.nav {
+  font-family: 'Roboto', sans-serif;
+  color: #272727;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 430px;
+    padding-right: 54px;
+  }
+}
+
+.nav-link {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #272727;
+  -webkit-transition: .2s ease color;
+  transition: .2s ease color;
+}
+
+.nav-link:hover {
+  color: #4c9b6f;
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    padding: 15px 25px;
+  }
+}
+
+.nav-link__arrow {
+  margin-left: 12px;
+  margin-bottom: 2px;
+}
+
+.hero {
+  min-height: 450px;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  text-align: center;
+  background: url(img/hero__bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 705px;
+    padding-top: 175px;
+  }
+}
+
+.hero-banner {
+  max-width: 730px;
+  margin: 0 auto;
+  padding: 33px 15px 15px;
+  background-color: rgba(247, 248, 250, 0.8);
+  border-radius: 2px;
+}
+
+.hero-banner__img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 6px;
+  padding-right: 12px;
+  margin-bottom: 12px;
+}
+
+.hero-banner__title {
+  font-size: 35px;
+  line-height: 57px;
+  color: #1D252C;
+}
+
+@media (min-width: 768px) {
+  .hero-banner__title {
+    font-size: 40px;
+    line-height: 57px;
+  }
+}
+
+.hero-banner__desc {
+  max-width: 537px;
+  margin: 0 auto 25px;
+  font-size: 16px;
+  line-height: 25px;
+  color: #1D252C;
+}
+
+@media (min-width: 768px) {
+  .hero-banner__desc {
+    margin-bottom: 49px;
+  }
+}
+
+.hero-banner__btn {
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #56B280;
+  -webkit-transition: .2s ease all;
+  transition: .2s ease all;
+}
+
+.hero-banner__btn:hover {
+  cursor: pointer;
+  background-color: #377252;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 768px) {
+  .hero-banner__btn {
+    margin-bottom: 45px;
+    width: 311px;
+    height: 43px;
+    padding: 0;
+  }
+}
+
+.products {
+  padding: 40px 0 75px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .products {
+    padding: 90px 0 125px;
+  }
+}
+
+.products-title {
+  margin-bottom: 9px;
+  font-size: 30px;
+  line-height: 47px;
+  letter-spacing: -0.9px;
+  color: #0B254B;
+}
+
+@media (min-width: 768px) {
+  .products-title {
+    font-size: 40px;
+    line-height: 57px;
+  }
+}
+
+.products-subtitle {
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.1px;
+  color: #5E6E89;
+}
+
+@media (min-width: 768px) {
+  .products-subtitle {
+    margin-bottom: 60px;
+  }
+}
+
+.products-group {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(230px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.products-group__item {
+  cursor: pointer;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-transition: .2s ease transform;
+  transition: .2s ease transform;
+}
+
+.products-group__item:hover {
+  -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.55);
+          box-shadow: 0 6px 6px rgba(0, 0, 0, 0.55);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.products-group__img-bg {
+  height: 155px;
+  background-color: #F7F8FA;
+}
+
+.products-group__name {
+  margin-top: 17px;
+  margin-left: 26px;
+  line-height: 27px;
+  letter-spacing: -0.9px;
+  text-align: start;
+  color: #1D293F;
+}
+
+.products-group__price {
+  margin-right: 27px;
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: end;
+  color: #56B280;
+}
+
+.details {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #F7F8FA;
+}
+
+@media (min-width: 1000px) {
+  .details {
+    padding-top: 133px;
+    padding-bottom: 209px;
+    min-height: 800px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .details-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+.details-title {
+  margin-top: 11px;
+  margin-bottom: 15px;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: -0.9px;
+  color: #1D252C;
+}
+
+@media (max-width: 1000px) {
+  .details-title {
+    text-align: center;
+  }
+}
+
+.details-subtitle {
+  margin-bottom: 49px;
+  line-height: 23px;
+  color: #56B280;
+}
+
+@media (max-width: 1000px) {
+  .details-subtitle {
+    text-align: center;
+  }
+}
+
+.details-benefits {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 1000px) {
+  .details-benefits {
+    margin-bottom: 72px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .details-benefits {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+  }
+}
+
+.details-benefits__item {
+  position: relative;
+  margin-bottom: 22px;
+  padding-left: 24px;
+}
+
+.details-benefits__item:last-child {
+  margin-bottom: 0;
+}
+
+.details-benefits__item-check-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.details-benefits__bold {
+  font-weight: 700;
+}
+
+.details-btn {
+  width: 194px;
+  height: 43px;
+  font-size: 20.5px;
+  border-radius: 4px;
+  border: none;
+  background-color: #56B280;
+  color: #fff;
+  -webkit-transition: .2s ease all;
+  transition: .2s ease all;
+}
+
+.details-btn:hover {
+  cursor: pointer;
+  background-color: #377252;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 1000px) {
+  .details-btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.details-img {
+  margin-top: 80px;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 1000px) {
+  .details-img {
+    display: none;
+  }
+}
+
+.reviews {
+  padding: 40px 0;
+  text-align: center;
+  background-color: rgba(86, 178, 128, 0.1);
+}
+
+@media (min-width: 768px) {
+  .reviews {
+    padding: 85px 0 90px;
+  }
+}
+
+.reviews-title {
+  margin-bottom: 7px;
+  font-size: 40px;
+  line-height: 57px;
+  letter-spacing: -0.9px;
+  color: #0B254B;
+}
+
+.reviews-subtitle {
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.1px;
+  color: #5E6E89;
+}
+
+.reviews-group {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(280px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.reviews-group__item {
+  cursor: pointer;
+  padding-top: 33px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 4px 4px rgba(139, 167, 178, 0.16);
+          box-shadow: 0 4px 4px rgba(139, 167, 178, 0.16);
+  -webkit-transition: .2s ease transform;
+  transition: .2s ease transform;
+}
+
+.reviews-group__item:hover {
+  -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.reviews-group__item:nth-child(1) .reviews-group__avatar {
+  background-image: url(img/reviews/reviews__avatar01.png);
+}
+
+.reviews-group__item:nth-child(2) .reviews-group__avatar {
+  background-image: url(img/reviews/reviews__avatar02.png);
+}
+
+.reviews-group__item:nth-child(3) .reviews-group__avatar {
+  background-image: url(img/reviews/reviews__avatar03.png);
+}
+
+.reviews-group__avatar {
+  margin: 0 auto 14px;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+}
+
+.reviews-group__stars {
+  margin-bottom: 20px;
+}
+
+.reviews-group__quote {
+  margin-bottom: 11px;
+  font-size: 22px;
+  line-height: 29px;
+  color: #1D293F;
+}
+
+.reviews-group__name {
+  margin-bottom: 29px;
+  font-size: 18px;
+  color: #7C8087;
+}
+
+.popular {
+  padding: 40px 0 72px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .popular {
+    padding: 92px 0 72px;
+  }
+}
+
+.popular .products-subtitle {
+  margin-bottom: 50px;
+}
+
+footer {
+  background-color: #272727;
+}
+
+.footer {
+  min-height: 383px;
+  padding-top: 60px;
+}
+
+.footer-top {
+  border-top: 1.5px solid #fff;
+}
+
+@media (min-width: 900px) {
+  .footer-top {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 170px 170px 170px;
+        grid-template-columns: 1fr 170px 170px 170px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-top .footer-item {
+    display: inline-block;
+    width: 32%;
+  }
+  .footer-top .footer-item:first-child {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-top .footer-item {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+.footer-logo {
+  margin: 16px 0 3px;
+}
+
+.footer-slogan {
+  max-width: 265px;
+  line-height: 23px;
+  color: #fff;
+}
+
+.footer-list__link {
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 16px;
+  line-height: 29px;
+  -webkit-transition: .2s ease color;
+  transition: .2s ease color;
+  color: #E1E1E1;
+}
+
+.footer-list__link:hover {
+  color: #4c9b6f;
+}
+
+.footer-list__title-link {
+  margin-top: 42px;
+  margin-bottom: 20px;
+  color: #56B280;
+}
+
+.footer-list__title-link:hover {
+  color: #E5E5E5;
+}
+
+.footer-bottom {
+  height: 30px;
+  background-color: #E5E5E5;
+}
+/*# sourceMappingURL=style.css.map */
+    </style>
+    <title>Candleaf</title>
+    <script src="js/burger.js"> </script>
+  </head>
+  <body> 
+    <header> 
+      <div class="wrapper">
+        <div class="header"> <a class="header-logo" href="/"><img class="header-logo__img" src="img/logo.svg" alt="logo"></a>
+          <nav>
+            <div class="nav">
+              <div class="nav-item"><a class="nav-link" href="#">Discovery<img class="nav-link__arrow" src="img/icons/arrow.svg" alt="arrow"></a></div>
+              <div class="nav-item"><a class="nav-link" href="#">About</a></div>
+              <div class="nav-item"><a class="nav-link" href="#">Contact us </a></div>
+            </div>
+          </nav>
+          <div class="header-control">
+            <div class="header-control__item">
+              <div class="header-control__btn header-control__user"><img src="img/icons/user.svg" alt="user"></div>
+            </div>
+            <div class="header-control__item">
+              <div class="header-control__btn header-control__cart"><img src="img/icons/cart.svg" alt="cart"></div>
+            </div>
+          </div>
+          <div class="header-burger" onclick="burger()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="hero"> 
+      <div class="wrapper">
+        <div class="hero-banner"><img class="hero-banner__img" src="img/hero__leaf.png" alt="leaf">
+          <h2 class="hero-banner__title">The nature candle</h2>
+          <p class="hero-banner__desc">All handmade with natural soy wax, Candleaf is a companion for all your pleasure moments </p>
+          <button class="hero-banner__btn">Discovery our collection</button>
+        </div>
+      </div>
+    </section>
+    <section class="products">
+      <div class="wrapper">
+        <h2 class="products-title">Products</h2>
+        <p class="products-subtitle">Order it for you or for your beloved ones </p>
+        <div class="products-group">
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__mint.png" alt="candle"></div>
+            <div class="products-group__name">Spiced Mint</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__strawberry.png" alt="candle"></div>
+            <div class="products-group__name">Sweet Straweberry</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__blueberries.png" alt="candle"></div>
+            <div class="products-group__name">Cool Blueberries</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__lemon.png" alt="candle"></div>
+            <div class="products-group__name">Juicy Lemon</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__beige.png" alt="candle"></div>
+            <div class="products-group__name">Product name</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__cinnamon.png" alt="candle"></div>
+            <div class="products-group__name">Fragrant Cinnamon</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__cherries.png" alt="candle"></div>
+            <div class="products-group__name">Summer Cherries</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__lavander.png" alt="candle"></div>
+            <div class="products-group__name">Clean Lavander</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="details">
+      <div class="wrapper"> 
+        <div class="details-grid">
+          <div>
+            <div class="details-title">Clean and <br /> fragrant soy wax</div>
+            <div class="details-subtitle">Made for your home and for your wellness</div>
+            <div class="details-benefits"> 
+              <div class="details-benefits__item">
+                 <span class="details-benefits__bold">Eco-sustainable:</span>All recyclable materials, 0% CO2 emissions                        
+                <div class="details-benefits__item-check-icon"><img src="img/details__check.svg" alt="check"></div>
+              </div>
+              <div class="details-benefits__item">
+                 <span class="details-benefits__bold">Hyphoallergenic:</span> 100% natural, human friendly ingredients                         
+                <div class="details-benefits__item-check-icon"><img src="img/details__check.svg" alt="check"></div>
+              </div>
+              <div class="details-benefits__item">
+                 <span class="details-benefits__bold">Handmade:</span> All candles are craftly made with love.                         
+                <div class="details-benefits__item-check-icon"><img src="img/details__check.svg" alt="check"></div>
+              </div>
+              <div class="details-benefits__item">
+                 <span class="details-benefits__bold">Long burning:</span> No more waste. Created for last long.
+                <div class="details-benefits__item-check-icon"><img src="img/details__check.svg" alt="check"></div>
+              </div>
+            </div>
+            <button class="details-btn">Learn more</button>
+          </div>
+          <div><img class="details-img" src="img/details__img.jpg" alt="details_img"></div>
+        </div>
+      </div>
+    </section>
+    <section class="reviews"> 
+      <div class="wrapper">   
+        <h2 class="reviews-title">Testimonials</h2>
+        <p class="reviews-subtitle">Some quotes from our happy customers</p>
+        <div class="reviews-group">
+          <div class="reviews-group__item">
+            <div class="reviews-group__avatar"></div><img class="reviews-group__stars" src="img/reviews/reviews__stars4.5.png" alt="rating">
+            <p class="reviews-group__quote">“I love it! No more air <br /> fresheners”</p>
+            <p class="reviews-group__name">Luisa</p>
+          </div>
+          <div class="reviews-group__item">
+            <div class="reviews-group__avatar"></div><img class="reviews-group__stars" src="img/reviews/reviews__stars5.png" alt="rating">
+            <p class="reviews-group__quote">“Raccomended for <br /> everyone”</p>
+            <p class="reviews-group__name">Edoardo</p>
+          </div>
+          <div class="reviews-group__item">
+            <div class="reviews-group__avatar"></div><img class="reviews-group__stars" src="img/reviews/reviews__stars4.5.png" alt="rating">
+            <p class="reviews-group__quote">“Looks very natural, the <br /> smell is awesome”</p>
+            <p class="reviews-group__name">Mart</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="popular">
+      <div class="wrapper">   
+        <h2 class="products-title">Popular</h2>
+        <p class="products-subtitle">Our top selling product that you may like </p>
+        <div class="products-group">
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__mint.png" alt="candle"></div>
+            <div class="products-group__name">Spiced Mint</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__strawberry.png" alt="candle"></div>
+            <div class="products-group__name">Sweet Straweberry</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__blueberries.png" alt="candle"></div>
+            <div class="products-group__name">Cool Blueberries</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+          <div class="products-group__item">
+            <div class="products-group__img-bg"><img class="products-group__img" src="img/candles/candle__lemon.png" alt="candle"></div>
+            <div class="products-group__name">Juicy Lemon</div>
+            <div class="products-group__price">9.99$</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer> 
+      <div class="wrapper">
+        <div class="footer"> 
+          <div class="footer-top">       
+            <div class="footer-item"><img class="footer-logo" src="img/footer__logo.svg" alt="fooerLogo">
+              <p class="footer-slogan">Your natural candle made for <br /> your home and for your wellness.</p>
+            </div>
+            <div class="footer-item">
+              <ul class="footer-list"> 
+                <li class="footer-list__item"><a class="footer-list__link footer-list__title-link">Discovery</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">New season</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Most searched</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Most selled</a></li>
+              </ul>
+            </div>
+            <div class="footer-item">
+              <ul class="footer-list"> 
+                <li class="footer-list__item"><a class="footer-list__link footer-list__title-link">About</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Help</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Shipping</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Affiliate</a></li>
+              </ul>
+            </div>
+            <div class="footer-item">
+              <ul class="footer-list"> 
+                <li class="footer-list__item"><a class="footer-list__link footer-list__title-link">Info</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Contact us</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Privacy Policies</a></li>
+                <li class="footer-list__item"><a class="footer-list__link">Terms &#38; Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-bottom"> </div>
+  </body>
+</html>
